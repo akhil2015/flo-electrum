@@ -829,6 +829,11 @@ class Abstract_Wallet(PrintError):
                     labels.append(label)
             return ', '.join(labels)
         return ''
+      
+    def get_tx_comment(self, tx_hash):
+        tx = self.transactions.get(tx_hash)
+        comment = tx.txcomment[5:]
+        return comment
 
     def get_tx_status(self, tx_hash, height, conf, timestamp):
         from .util import format_time
