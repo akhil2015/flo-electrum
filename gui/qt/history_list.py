@@ -55,7 +55,7 @@ class HistoryList(MyTreeWidget):
         self.setColumnHidden(1, True)
 
     def refresh_headers(self):
-        headers = ['', '', _('Date'), _('Description') , _('Amount'), _('Balance')]
+        headers = ['', '', _('Date'), _('Description') , _('Amount'), _('Balance'), _('Comment')]
         fx = self.parent.fx
         if fx and fx.show_history():
             headers.extend(['%s '%fx.ccy + _('Amount'), '%s '%fx.ccy + _('Balance')])
@@ -82,7 +82,8 @@ class HistoryList(MyTreeWidget):
             v_str = self.parent.format_amount(value, True, whitespaces=True)
             balance_str = self.parent.format_amount(balance, whitespaces=True)
             label = self.wallet.get_label(tx_hash)
-            entry = ['', tx_hash, status_str, label, v_str, balance_str]
+            txcomment = self.wallet.get_tx_comment(tx_hash)
+            entry = ['', tx_hash, status_str, label, v_str, balance_str, txcomment]
             if fx and fx.show_history():
                 date = timestamp_to_datetime(time.time() if conf <= 0 else timestamp)
                 for amount in [value, balance]:
