@@ -414,6 +414,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
         try:
             sorted(recent)
         except:
+
             recent = []
         if filename in recent:
             recent.remove(filename)
@@ -1027,6 +1028,12 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
         self.message_e = MyLineEdit()
         grid.addWidget(self.message_e, 2, 1, 1, -1)
 
+        msg = _('This is where you write the FLO Data for the transaction')
+        txcomment_label = HelpLabel(_('FLO Data'), msg)
+        grid.addWidget(txcomment_label, 7, 0)
+        self.message_tx= MyLineEdit()
+        grid.addWidget(self.message_tx, 7, 1, 1, -1)
+
         self.from_label = QLabel(_('From'))
         grid.addWidget(self.from_label, 3, 0)
         self.from_list = MyTreeWidget(self, self.from_list_menu, ['',''])
@@ -1366,6 +1373,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
             self.show_error(_('Payment request has expired'))
             return
         label = self.message_e.text()
+        txcomment = self.message_tx.text()
 
         if self.payment_request:
             outputs = self.payment_request.get_outputs()
@@ -1400,7 +1408,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
 
         fee_estimator = self.get_send_fee_estimator()
         coins = self.get_coins()
-        return outputs, fee_estimator, label, coins
+        return outputs, fee_estimator, label, coins, txcomment
 
     def do_preview(self):
         self.do_send(preview = True)
@@ -1411,7 +1419,9 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
         r = self.read_send_tab()
         if not r:
             return
-        outputs, fee_estimator, tx_desc, coins = r
+        outputs, fee_estimator, tx_desc, coins, txcomment = r
+        print("The transaction comment when send is clicked is ")
+        print(txcomment)
         try:
             is_sweep = bool(self.tx_external_keypairs)
             tx = self.wallet.make_unsigned_transaction(
