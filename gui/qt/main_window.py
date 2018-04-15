@@ -1425,7 +1425,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
         try:
             is_sweep = bool(self.tx_external_keypairs)
             tx = self.wallet.make_unsigned_transaction(
-                coins, outputs, self.config, fixed_fee=fee_estimator,
+                coins, outputs, self.config, txcomment, fixed_fee=fee_estimator,
                 is_sweep=is_sweep)
         except NotEnoughFunds:
             self.show_message(_("Insufficient funds"))

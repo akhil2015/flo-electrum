@@ -871,8 +871,9 @@ class Abstract_Wallet(PrintError):
     def dust_threshold(self):
         return dust_threshold(self.network)
 
-    def make_unsigned_transaction(self, inputs, outputs, config, fixed_fee=None,
+    def make_unsigned_transaction(self, inputs, outputs, config, txcomment, fixed_fee=None,
                                   change_addr=None, is_sweep=False):
+        print("I'm at wallet.py")
         # check outputs
         i_max = None
         for i, o in enumerate(outputs):
@@ -941,6 +942,9 @@ class Abstract_Wallet(PrintError):
         tx.BIP_LI01_sort()
         # Timelock tx to current height.
         tx.locktime = self.get_local_height()
+        tx.txcomment = txcomment
+        print("comment added as part of the transaction is")
+        print(tx.txcomment)
         run_hook('make_unsigned_transaction', self, tx)
         return tx
 

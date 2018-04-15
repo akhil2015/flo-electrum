@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07e0b929-4ca8-42ed-b8e1-16010ab8a2a5" name="Default" comment="" />
+    <list default="true" id="07e0b929-4ca8-42ed-b8e1-16010ab8a2a5" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/qt/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/qt/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/wallet.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/wallet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plugins/trustedcoin/trustedcoin.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/trustedcoin/trustedcoin.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,16 +16,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="electrum" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/electrum">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="main_window.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gui/qt/main_window.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="1482" column="43" selection-start-line="1482" selection-start-column="43" selection-end-line="1482" selection-end-column="43" />
+            <state relative-caret-position="150">
+              <caret line="1465" column="51" selection-start-line="1465" selection-start-column="51" selection-end-line="1465" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="wallet.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/wallet.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="873" column="69" selection-start-line="873" selection-start-column="69" selection-end-line="873" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="coinchooser.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/coinchooser.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-575">
+              <caret line="177" column="8" selection-start-line="177" selection-start-column="8" selection-end-line="177" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trustedcoin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/plugins/trustedcoin/trustedcoin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="250" column="63" selection-start-line="250" selection-start-column="63" selection-end-line="250" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -28,7 +55,7 @@
       <file leaf-file-name="network.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11325">
+            <state relative-caret-position="11610">
               <caret line="774" column="45" selection-start-line="774" selection-start-column="45" selection-end-line="774" selection-end-column="45" />
               <folding>
                 <element signature="e#1143#1154#0" expanded="true" />
@@ -40,7 +67,7 @@
       <file leaf-file-name="blockchain.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/blockchain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
+            <state relative-caret-position="2295">
               <caret line="158" column="53" selection-start-line="158" selection-start-column="53" selection-end-line="158" selection-end-column="53" />
             </state>
           </provider>
@@ -53,15 +80,25 @@
       <find>do_send</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gui/qt/main_window.py" />
         <option value="$PROJECT_DIR$/lib/blockchain.py" />
+        <option value="$PROJECT_DIR$/plugins/trustedcoin/trustedcoin.py" />
+        <option value="$PROJECT_DIR$/lib/wallet.py" />
+        <option value="$PROJECT_DIR$/gui/qt/main_window.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -73,6 +110,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -95,7 +133,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -153,7 +190,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-2" width="1366" height="734" extended-state="7" />
+    <frame x="0" y="-2" width="1366" height="734" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24597365" />
@@ -179,8 +216,53 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/electrum">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/gui/qt/main_window.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22230">
+          <caret line="1482" column="43" selection-start-line="1482" selection-start-column="43" selection-end-line="1482" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11610">
+          <caret line="774" column="45" selection-start-line="774" selection-start-column="45" selection-end-line="774" selection-end-column="45" />
+          <folding>
+            <element signature="e#1143#1154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/blockchain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2295">
+          <caret line="158" column="53" selection-start-line="158" selection-start-column="53" selection-end-line="158" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gui/qt/main_window.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22230">
+          <caret line="1482" column="43" selection-start-line="1482" selection-start-column="43" selection-end-line="1482" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/network.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="11610">
+          <caret line="774" column="45" selection-start-line="774" selection-start-column="45" selection-end-line="774" selection-end-column="45" />
+          <folding>
+            <element signature="e#1143#1154#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/blockchain.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2370">
+          <caret line="158" column="53" selection-start-line="158" selection-start-column="53" selection-end-line="158" selection-end-column="53" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui/qt/main_window.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -213,12 +295,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/electrum">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11325">
+        <state relative-caret-position="11610">
           <caret line="774" column="45" selection-start-line="774" selection-start-column="45" selection-end-line="774" selection-end-column="45" />
           <folding>
             <element signature="e#1143#1154#0" expanded="true" />
@@ -228,15 +307,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/blockchain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
+        <state relative-caret-position="2295">
           <caret line="158" column="53" selection-start-line="158" selection-start-column="53" selection-end-line="158" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/plugins/trustedcoin/trustedcoin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="250" column="63" selection-start-line="250" selection-start-column="63" selection-end-line="250" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/coinchooser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-575">
+          <caret line="177" column="8" selection-start-line="177" selection-start-column="8" selection-end-line="177" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/wallet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="873" column="69" selection-start-line="873" selection-start-column="69" selection-end-line="873" selection-end-column="69" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gui/qt/main_window.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="1482" column="43" selection-start-line="1482" selection-start-column="43" selection-end-line="1482" selection-end-column="43" />
+        <state relative-caret-position="150">
+          <caret line="1465" column="51" selection-start-line="1465" selection-start-column="51" selection-end-line="1465" selection-end-column="51" />
         </state>
       </provider>
     </entry>

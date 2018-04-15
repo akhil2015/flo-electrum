@@ -250,6 +250,7 @@ class Wallet_2fa(Multisig_Wallet):
 
     def make_unsigned_transaction(self, coins, outputs, config, fixed_fee=None,
                                   change_addr=None, is_sweep=False):
+        print("Im at trustedcoin.py")
         mk_tx = lambda o: Multisig_Wallet.make_unsigned_transaction(
             self, coins, o, config, fixed_fee, change_addr)
         fee = self.extra_fee(config) if not is_sweep else 0
