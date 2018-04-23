@@ -942,7 +942,11 @@ class Abstract_Wallet(PrintError):
         tx.BIP_LI01_sort()
         # Timelock tx to current height.
         tx.locktime = self.get_local_height()
-        tx.txcomment = txcomment
+
+        # Transactions with transaction comments are version 2
+        if txcomment != "":
+            tx.version = 2
+            tx.txcomment = "text:" + txcomment
         print("comment added as part of the transaction is")
         print(tx.txcomment)
         run_hook('make_unsigned_transaction', self, tx)
