@@ -83,6 +83,33 @@ class NetworkConstants:
         cls.DEFAULT_SERVERS = read_json('servers.json', {})
         cls.CHECKPOINTS = read_json('checkpoints.json', [])
 
+        # FLO Network constants
+        cls.fPowAllowMinDifficultyBlocks = False
+        cls.fPowNoRetargeting = False
+        cls.nRuleChangeActivationThreshold = 6048  # 75% of 8064
+        cls.nMinerConfirmationWindow = 8064
+
+        # Difficulty adjustments
+        cls.nPowTargetSpacing = 40  # 40s block time
+        # V1
+        cls.nTargetTimespan_Version1 = 60 * 60
+        cls.nInterval_Version1 = cls.nTargetTimespan_Version1 / cls.nPowTargetSpacing
+        cls.nMaxAdjustUp_Version1 = 75
+        cls.nMaxAdjustDown_Version1 = 300
+        cls.nAveragingInterval_Version1 = cls.nInterval_Version1
+        # V2
+        cls.nHeight_Difficulty_Version2 = 208440
+        cls.nInterval_Version2 = 15
+        cls.nMaxAdjustDown_Version2 = 300
+        cls.nMaxAdjustUp_Version2 = 75
+        cls.nAveragingInterval_Version2 = cls.nInterval_Version2
+        # V3
+        cls.nHeight_Difficulty_Version3 = 426000
+        cls.nInterval_Version3 = 1
+        cls.nMaxAdjustDown_Version3 = 3
+        cls.nMaxAdjustUp_Version3 = 2
+        cls.nAveragingInterval_Version3 = 6
+
     @classmethod
     def set_testnet(cls):
         cls.TESTNET = True
