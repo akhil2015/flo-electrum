@@ -375,14 +375,14 @@ class Blockchain(util.PrintError):
             blockstogoback = averagingInterval
 
         firstHeight = height - blockstogoback
-        headerFirst = self.read_header(firstHeight)
-        firstBlockTime = headerFirst["time"]
+        headerFirst = self.read_header(int(firstHeight))
+        firstBlockTime = headerFirst["timestamp"]
 
         nMinActualTimespan = int(self.MinActualTimespan(int(headerLast["block_height"]) + 1))
         nMaxActualTimespan = int(self.MaxActualTimespan(int(headerLast["block_height"]) + 1))
 
         # Limit adjustment step
-        nActualTimespan = headerLast["time"] - firstBlockTime
+        nActualTimespan = headerLast["timestamp"] - firstBlockTime
         if nActualTimespan < nMinActualTimespan:
             nActualTimespan = nMinActualTimespan
         if nActualTimespan > nMaxActualTimespan:
@@ -412,8 +412,8 @@ class Blockchain(util.PrintError):
 
     def bits_to_target(self, bits):
         bitsN = (bits >> 24) & 0xff
-        if not (bitsN >= 0x03 and bitsN <= 0x1d):
-            raise BaseException("First part of bits should be in [0x03, 0x1d]")
+        if not (bitsN >= 0x03 and bitsN <= 0x1e):
+            raise BaseException("First part of bits should be in [0x03, 0x1e]")
         bitsBase = bits & 0xffffff
         if not (bitsBase >= 0x8000 and bitsBase <= 0x7fffff):
             raise BaseException("Second part of bits should be in [0x8000, 0x7fffff]")
