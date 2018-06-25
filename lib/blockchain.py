@@ -186,7 +186,6 @@ class Blockchain(util.PrintError):
         current_header = (index * 2016)
         #last = (index * 2016 + 2015)
         prev_hash = self.get_hash(current_header - 1)
-        print("index inside verify chunk \t" + index)
 
         for i in range(num):
             target = self.get_target(current_header -1)
@@ -271,7 +270,10 @@ class Blockchain(util.PrintError):
             return
         if height < self.checkpoint:
             return self.parent().read_header(height)
-        if height > self.height():
+        check_height = self.height()
+        if height == 1:
+            print("skip")
+        elif height > check_height:
             return
         delta = height - self.checkpoint
         name = self.path()
