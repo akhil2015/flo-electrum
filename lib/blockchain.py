@@ -270,7 +270,7 @@ class Blockchain(util.PrintError):
             return
         if height < self.checkpoint:
             return self.parent().read_header(height)
-        if height self.height():
+        if height > self.height():
             return
         delta = height - self.checkpoint
         name = self.path()
