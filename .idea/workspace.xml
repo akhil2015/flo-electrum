@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07e0b929-4ca8-42ed-b8e1-16010ab8a2a5" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/blockchain.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/blockchain.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/network.py" beforeDir="false" afterPath="$PROJECT_DIR$/lib/network.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +16,8 @@
       <file leaf-file-name="electrum" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/electrum">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="490">
-              <caret line="377" column="21" lean-forward="true" selection-start-line="377" selection-start-column="21" selection-end-line="377" selection-end-column="21" />
+            <state relative-caret-position="39">
+              <caret line="373" selection-start-line="373" selection-end-line="373" />
             </state>
           </provider>
         </entry>
@@ -27,8 +25,8 @@
       <file leaf-file-name="network.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/network.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="780" column="18" lean-forward="true" selection-start-line="780" selection-start-column="18" selection-end-line="780" selection-end-column="18" />
+            <state relative-caret-position="263">
+              <caret line="776" selection-start-line="776" selection-end-line="776" />
               <folding>
                 <element signature="e#1143#1154#0" expanded="true" />
               </folding>
@@ -57,8 +55,8 @@
       <file leaf-file-name="util.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/util.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="318" selection-start-line="318" selection-end-line="318" />
+            <state relative-caret-position="98">
+              <caret line="257" selection-start-line="257" selection-end-line="257" />
             </state>
           </provider>
         </entry>
@@ -84,8 +82,8 @@
       <file leaf-file-name="blockchain.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/blockchain.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="376" column="24" lean-forward="true" selection-start-line="376" selection-start-column="24" selection-end-line="376" selection-end-column="24" />
+            <state relative-caret-position="133">
+              <caret line="195" column="31" selection-start-line="195" selection-start-column="31" selection-end-line="195" selection-end-column="31" />
               <folding>
                 <element signature="e#1140#1149#0" expanded="true" />
               </folding>
@@ -105,8 +103,8 @@
       <file leaf-file-name="bitcoin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/bitcoin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1065">
-              <caret line="83" selection-start-line="83" selection-end-line="83" />
+            <state relative-caret-position="113">
+              <caret line="237" selection-start-line="237" selection-end-line="237" />
             </state>
           </provider>
         </entry>
@@ -149,6 +147,8 @@
       <find>save_chunk</find>
       <find>verify_chunk</find>
       <find>print(&quot;</find>
+      <find>index</find>
+      <find>save_header</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$</dir>
@@ -215,7 +215,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.electrum">
+    <configuration name="blockchain" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="flo-electrum-master" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/lib" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/lib/blockchain.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="electrum" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="flo-electrum-master" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -234,9 +252,14 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <list>
+      <item itemvalue="Python.electrum" />
+      <item itemvalue="Python.blockchain" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.electrum" />
+        <item itemvalue="Python.blockchain" />
       </list>
     </recent_temporary>
   </component>
@@ -261,12 +284,12 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2442623" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.019672131" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3065574" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.43114755" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -282,70 +305,65 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/lib/blockchain.py</url>
-          <line>191</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lib/network.py</url>
           <line>805</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lib/network.py</url>
           <line>765</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lib/blockchain.py</url>
-          <line>236</line>
+          <line>247</line>
           <option name="timeStamp" value="13" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lib/blockchain.py</url>
           <line>85</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lib/network.py</url>
           <line>776</line>
           <option name="timeStamp" value="15" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lib/blockchain.py</url>
-          <line>216</line>
+          <line>227</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lib/blockchain.py</url>
-          <line>214</line>
+          <line>225</line>
           <option name="timeStamp" value="17" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/lib/blockchain.py</url>
-          <line>265</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lib/blockchain.py</url>
           <line>98</line>
           <option name="timeStamp" value="21" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/electrum</url>
           <line>373</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lib/blockchain.py</url>
           <line>121</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/lib/blockchain.py</url>
-          <line>279</line>
+          <line>290</line>
           <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/lib/blockchain.py</url>
+          <line>272</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -358,7 +376,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="25" />
+      <option name="time" value="29" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -647,13 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/bitcoin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RELEASE-NOTES">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12810">
@@ -661,24 +672,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/verifier.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="49" column="72" selection-start-line="49" selection-start-column="72" selection-end-line="49" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/daemon.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="125" selection-start-line="125" selection-end-line="125" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="318" selection-start-line="318" selection-end-line="318" />
         </state>
       </provider>
     </entry>
@@ -696,27 +693,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/verifier.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="49" column="72" selection-start-line="49" selection-start-column="72" selection-end-line="49" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/electrum">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="377" column="21" lean-forward="true" selection-start-line="377" selection-start-column="21" selection-end-line="377" selection-end-column="21" />
+        <state relative-caret-position="39">
+          <caret line="373" selection-start-line="373" selection-end-line="373" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/network.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="780" column="18" lean-forward="true" selection-start-line="780" selection-start-column="18" selection-end-line="780" selection-end-column="18" />
+        <state relative-caret-position="263">
+          <caret line="776" selection-start-line="776" selection-end-line="776" />
           <folding>
             <element signature="e#1143#1154#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="257" selection-start-line="257" selection-end-line="257" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/bitcoin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="237" selection-start-line="237" selection-end-line="237" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/blockchain.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="376" column="24" lean-forward="true" selection-start-line="376" selection-start-column="24" selection-end-line="376" selection-end-column="24" />
+        <state relative-caret-position="133">
+          <caret line="195" column="31" selection-start-line="195" selection-start-column="31" selection-end-line="195" selection-end-column="31" />
           <folding>
             <element signature="e#1140#1149#0" expanded="true" />
           </folding>

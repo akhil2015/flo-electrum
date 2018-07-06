@@ -190,10 +190,12 @@ class Blockchain(util.PrintError):
         prev_hash = self.get_hash(current_header - 1)
 
         for i in range(num):
+            print(i)
             target = self.get_target(current_header -1)
             raw_header = data[i*80:(i+1) * 80]
             header = deserialize_header(raw_header, current_header)
             self.verify_header(header, prev_hash, target)
+            self.save_chunk_part(header)
             prev_hash = hash_header(header)
             current_header = current_header + 1
 
@@ -202,13 +204,22 @@ class Blockchain(util.PrintError):
         filename = 'blockchain_headers' if self.parent_id is None else os.path.join('forks', 'fork_%d_%d'%(self.parent_id, self.checkpoint))
         return os.path.join(d, filename)
 
+    def save_chunk_part(self, header):
+        filename = self.path()
+        delta = header.get('block_height') - self.checkpoint
+        data = bfh(serialize_header(header))
+        #assert delta == self.size()
+        assert len(data) == 80
+        self.write(data, delta*80)
+        #self.swap_with_parent()
+
     def save_chunk(self, index, chunk):
         filename = self.path()
-        d = (index * 2016 - self.checkpoint) * 80
-        if d < 0:
-            chunk = chunk[-d:]
-            d = 0
-        self.write(chunk, d)
+        #d = (index * 2016 - self.checkpoint) * 80
+        #if d < 0:
+        #    chunk = chunk[-d:]
+        #    d = 0
+        #self.write(chunk, d)
         self.swap_with_parent()
 
     def swap_with_parent(self):
