@@ -162,6 +162,7 @@ class Blockchain(util.PrintError):
 
     def size(self):
         with self.lock:
+            #print("self._size = " + str(self._size))
             return self._size
 
     def update_size(self):
@@ -175,11 +176,12 @@ class Blockchain(util.PrintError):
         if bitcoin.NetworkConstants.TESTNET:
             return
         bits = self.target_to_bits(target)
-        print("abc")
+        #print("I'm inside verify_header")
         #if bits != header.get('bits'):
         #    raise BaseException("bits mismatch: %s vs %s" % (bits, header.get('bits')))
         #if int('0x' + _hash, 16) > target:
         #    raise BaseException("insufficient proof of work: %s vs target %s" % (int('0x' + _hash, 16), target))
+        #print("I passed verify_header(). Calc target values have been matched")
 
     def verify_chunk(self, index, data):
         num = len(data) // 80
@@ -270,6 +272,8 @@ class Blockchain(util.PrintError):
             return
         if height < self.checkpoint:
             return self.parent().read_header(height)
+        #print("Height\t= " + str(height))
+        #print("self.height()\t= " + str(self.height()))
         if height > self.height():
             return
         delta = height - self.checkpoint
@@ -354,7 +358,8 @@ class Blockchain(util.PrintError):
         # compute target from chunk x, used in chunk x+1
         if bitcoin.NetworkConstants.TESTNET:
             return 0
-        if index == -1:
+        #The range is first 90 blocks because FLO's block time was 90 blocks when it started
+        if -1 <= index <= 88:
             return MAX_TARGET
         if index < len(self.checkpoints):
             h, t = self.checkpoints[index]
@@ -369,7 +374,6 @@ class Blockchain(util.PrintError):
 
         averagingInterval = self.AveragingInterval(height + 1)
         blockstogoback = averagingInterval - 1
-        # print("Blocks to go back = " + str(blockstogoback))
         if (height + 1) != averagingInterval:
             blockstogoback = averagingInterval
 
