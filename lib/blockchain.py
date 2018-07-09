@@ -26,7 +26,14 @@ import threading
 from . import util
 from . import bitcoin
 from .bitcoin import *
+import time
 
+try:
+    import scrypt
+    getPoWHash = lambda x: scrypt.hash(x, x, N=1024, r=1, p=1, buflen=32)
+except ImportError:
+    util.print_msg("Warning: package scrypt not available; synchronization could be very slow")
+    from .scrypt import scrypt_1024_1_1_80 as getPoWHash
 # FLO Constants
 MAX_TARGET = 0x00000fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
 nPowTargetSpacing = 40   # 40s block time
@@ -78,6 +85,8 @@ def hash_header(header):
     return hash_encode(Hash(bfh(serialize_header(header))))
 
 
+def pow_hash_header(header):
+    return hash_encode(getPoWHash(bfh(serialize_header(header))))
 blockchains = {}
 
 def read_blockchains(config):
@@ -171,17 +180,24 @@ class Blockchain(util.PrintError):
 
     def verify_header(self, header, prev_hash, target):
         _hash = hash_header(header)
+        _powhash = pow_hash_header(header)
         if prev_hash != header.get('prev_block_hash'):
             raise BaseException("prev hash mismatch: %s vs %s" % (prev_hash, header.get('prev_block_hash')))
         if bitcoin.NetworkConstants.TESTNET:
             return
-        bits = self.target_to_bits(target)
-        #print("I'm inside verify_header")
-        #if bits != header.get('bits'):
-        #    raise BaseException("bits mismatch: %s vs %s" % (bits, header.get('bits')))
-        #if int('0x' + _hash, 16) > target:
-        #    raise BaseException("insufficient proof of work: %s vs target %s" % (int('0x' + _hash, 16), target))
-        #print("I passed verify_header(). Calc target values have been matched")
+        bits = target
+        print("bits calculated: "+str(target))
+        temp = header.get('bits')
+        print("actual bits: "+str(temp))
+        print("I'm inside verify_header")
+        if bits != header.get('bits'):
+           raise BaseException("bits mismatch: %s vs %s" % (bits, header.get('bits')))
+        block_hash=int('0x' + _hash, 16)
+        target_val = self.bits_to_target(bits)
+        print("target val:"+str(type(target_val)))
+        if int('0x' + _powhash, 16) > target_val:
+           print("insufficient proof of work: %s vs target %s" % (int('0x' + _hash, 16), target_val))
+        print("I passed verify_header(). Calc target values have been matched")
 
     def verify_chunk(self, index, data):
         num = len(data) // 80
@@ -191,11 +207,13 @@ class Blockchain(util.PrintError):
 
         for i in range(num):
             print(i)
+            start = time.clock()
             target = self.get_target(current_header -1)
             raw_header = data[i*80:(i+1) * 80]
             header = deserialize_header(raw_header, current_header)
             self.verify_header(header, prev_hash, target)
             self.save_chunk_part(header)
+            print(time.clock() - start)
             prev_hash = hash_header(header)
             current_header = current_header + 1
 
@@ -371,7 +389,7 @@ class Blockchain(util.PrintError):
             return 0
         #The range is first 90 blocks because FLO's block time was 90 blocks when it started
         if -1 <= index <= 88:
-            return MAX_TARGET
+            return 0x1e0ffff0
         if index < len(self.checkpoints):
             h, t = self.checkpoints[index]
             return t
@@ -419,7 +437,7 @@ class Blockchain(util.PrintError):
 
         if bnNew > MAX_TARGET:
             bnNew = MAX_TARGET
-
+        print("bnnew: "+str(bnNew))
         bnNew = self.target_to_bits(int(bnNew))
         return bnNew
 
