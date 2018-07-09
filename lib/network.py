@@ -757,6 +757,7 @@ class Network(util.DaemonThread):
     def request_chunk(self, interface, idx):
         interface.print_error("requesting chunk %d" % idx)
         self.queue_request('blockchain.block.get_chunk', [idx], interface)
+        print("Requesting chunk " + str(idx))
         interface.request = idx
         interface.req_time = time.time()
 
@@ -772,6 +773,7 @@ class Network(util.DaemonThread):
         index = params[0]
         if interface.request != index:
             return
+        print("Received chunk "+ str(index))
         connect = interface.blockchain.connect_chunk(index, result)
         # If not finished, get the next chunk
         if not connect:
@@ -789,6 +791,7 @@ class Network(util.DaemonThread):
     def request_header(self, interface, height):
         #interface.print_error("requesting header %d" % height)
         self.queue_request('blockchain.block.get_header', [height], interface)
+        print("Requesting header " + str(height))
         interface.request = height
         interface.req_time = time.time()
 
@@ -800,10 +803,12 @@ class Network(util.DaemonThread):
             self.connection_down(interface.server)
             return
         height = header.get('block_height')
+        print("Received header "+ str(height))
         if interface.request != height:
             interface.print_error("unsolicited header",interface.request, height)
             self.connection_down(interface.server)
             return
+        #print(type(header))
         chain = blockchain.check_header(header)
         if interface.mode == 'backward':
             can_connect = blockchain.can_connect(header)
